@@ -1,0 +1,31 @@
+{
+  "general": {
+    "designResolution": {
+      "width": 1200,
+      "height": 768,
+      "fitHeight": true
+    }
+  },
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "Player"
+      },
+      {
+        "index": 2,
+        "name": "alien"
+      },
+      {
+        "index": 3,
+        "name": "Bullet"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 0,
+      "1": 4,
+      "2": 10,
+      "3": 4
+    }
+  }
+}
