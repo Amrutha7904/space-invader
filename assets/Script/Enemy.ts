@@ -3,16 +3,16 @@ const { ccclass, property } = _decorator;
 
 @ccclass('Enemy')
 export class Enemy extends Component {
-//     @property
-//     private enemyspeed: number = 10;
+
+
 onCollisionEnter(other,self){
-if(other.tag == 2){
+ if(other.tag == 2){
     this.node.destroy();
-}
-if(self.name == 1){
+ }
+ if(self.name == 1){
     cc.director.loadScene('Game');
     this.node.parent?.getComponent('Game').addScore();
-}
+ }
          
 }
 //  collision manager is enebled  

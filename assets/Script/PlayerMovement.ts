@@ -3,8 +3,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass('PlayerMovement')
 export class PlayerMovement extends Component {
-    moveLeft:number=0;
-    moveRight:number=0;
+    private moveLeft:number=0;
+    private moveRight:number=0;
 
 
    movePlayer(event: EventKeyboard){

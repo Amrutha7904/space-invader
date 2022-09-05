@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 export class Bullet extends Component {
 
 @property
-BulletSpeed:number = 50;
+ public bulletSpeed:number = 100;
 
 onCollisionEnter(other,self){
     if(other.name == 'Player<PolygonCollider>'&& self.name == 'Bullet<BoxCollider>'){
@@ -15,7 +15,7 @@ onCollisionEnter(other,self){
 
 }
 update(deltaTime:number){
-    this.node.setPosition(this.node.position.x, this.node.position.y += this.BulletSpeed*deltaTime);
+    this.node.setPosition(this.node.position.x, this.node.position.y += this.bulletSpeed*deltaTime);
     if(this.node.position.y >= +(this.node.parent.getContentSize().height)){
         this.node.destroy();
     }

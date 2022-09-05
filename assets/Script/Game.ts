@@ -5,24 +5,24 @@ const { ccclass, property} = _decorator;
 export class Game extends Component {
    
    @property({type: Prefab})
-   public BulletPrefab: Prefab|null = null;
+   public bulletPrefab: Prefab|null = null;
 
    @property({type: Prefab})
-   public AlienPrefab: Prefab|null = null;
+   public alienPrefab: Prefab|null = null;
 
    @property({type:Label})
-   public ScoreLabel:Label|null = null;
+   public scoreLabel:Label|null = null;
 
 
 
 //   To add score
 addScore(){
-    this.Score +=100;
-    this.ScoreLabel.string = "SCORE :"+this.Score.toString();
+    this.score +=100;
+    this.scoreLabel.string = "SCORE :"+this.score.toString();
 }
 // spwaning bullet at players position
    spwan(event){
-    var newBullet = cc.instantiate(this.BulletPrefab);
+    var newBullet = cc.instantiate(this.bulletPrefab);
     newBullet.setPosition(this.node.getChildByName('Player')?.position.x,this.node.getChildByName('Player')?.position.y);
     this.node.addChild(newBullet);
 
@@ -33,12 +33,12 @@ addScore(){
    }
 //    creating new alien set
 createAlien(){
-    var newAlienShip = instantiate(this.AlienPrefab);
+    var newAlienShip = instantiate(this.alienPrefab);
     var position = [
         v2(78,458),v2(277,-458), v2(379,6), v2(389,5)
     ]
-    var AlienPosition = math.floor(Math.random()*position.length);
-    newAlienShip.setPosition(position[AlienPosition]);
+    var alienPosition = math.floor(Math.random()*position.length);
+    newAlienShip.setPosition(position[alienPosition]);
     this.node.addChild(newAlienShip);
 }
 onKeyDown(event:KeyboardEvent){
